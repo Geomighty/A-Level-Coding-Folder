@@ -5,4 +5,4 @@ for i in range(multiples):
     multiplication_results = multiplication_table * (i+1)
     results.append(multiplication_results)
 for j in range(multiples):
-    print(f"{multiplication_table} X {j + 13} = {results[j]}")
+    print(f"{multiplication_table} X {j + 1} = {results[j]}")

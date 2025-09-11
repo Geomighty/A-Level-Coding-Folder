@@ -6,21 +6,17 @@ print(name_list)
 print(" ")
 print(f"The third name is: {name_list[2]}")
 print(" ")
-print(f"The last seven names are: {name_list[11:18]}")
+print(f"The last seven names are: {name_list[-7:]}")
 print(" ")
 number_list = []
 for i in range(5):
     number = int(input("Please enter a integer: "))
     number_list.append(number)
-number_list.sort()
-total = 0
-for i in range(5):
-    total = total + number_list[i]
-mean = total/5
-print(f"The largest number is: {number_list[4]}")
 print(" ")
-print(f"The smallest number is: {number_list[0]}")
+print(f"The largest number is: {max(number_list)}")
 print(" ")
-print(f"The total off al the numbers in the list is: {total}")
+print(f"The smallest number is: {min(number_list)}")
 print(" ")
-print(f"The mean of all the numbers is: {mean}")
+print(f"The total off all the numbers in the list is: {sum(number_list)}")
+print(" ")
+print(f"The mean of all the numbers is: {(sum(number_list))/(len(number_list))}")

@@ -69,7 +69,6 @@ while option != 5:
     
     if option == 4:
         mark_task_complete()
-        print(completed_task)
         print("""
       1. Add a task
       2. Display task lists

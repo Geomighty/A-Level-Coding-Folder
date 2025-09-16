@@ -41,4 +41,5 @@ while option != 5:
         option = int(input("Enter the number of the operation you want to perform."))
     if option == 4:
         mark_task_complete()
+        print(completed_task)
         option = int(input("Enter the number of the operation you want to perform."))

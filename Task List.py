@@ -39,41 +39,41 @@ while option != 5:
         while new_task != "no":
             new_task = str(input("Enter your new task enter no to quit: "))
             add_task(new_task)
-        option = int(input("Enter the number of the operation you want to perform."))
         print("""
       1. Add a task
       2. Display task lists
       3. Check the next task
       4. Mark task as complete
       5. Exit""")
+        option = int(input("Enter the number of the operation you want to perform."))
 
     if option == 2:
         display_task_list()
-        option = int(input("Enter the number of the operation you want to perform."))
         print("""
       1. Add a task
       2. Display task lists
       3. Check the next task
       4. Mark task as complete
       5. Exit""")
+        option = int(input("Enter the number of the operation you want to perform."))
 
     if option == 3:
         next_task()
-        option = int(input("Enter the number of the operation you want to perform."))
         print("""
       1. Add a task
       2. Display task lists
       3. Check the next task
       4. Mark task as complete
       5. Exit""")
+        option = int(input("Enter the number of the operation you want to perform."))
     
     if option == 4:
         mark_task_complete()
         print(completed_task)
-        option = int(input("Enter the number of the operation you want to perform."))
         print("""
       1. Add a task
       2. Display task lists
       3. Check the next task
       4. Mark task as complete
       5. Exit""")
+        option = int(input("Enter the number of the operation you want to perform."))

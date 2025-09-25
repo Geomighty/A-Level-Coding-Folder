@@ -14,7 +14,7 @@ def writing_files(write_filename):
 
 print("Which option do you want to choose:")
 print("1. read files")
-print("2. write files")
+print("2. write files (WILL OVERWRITE FILE)")
 print("enter quit to stop the program")
 option = int(input("Enter what number option you want to choose "))
 
@@ -37,6 +37,6 @@ while option != "quit":
         print("1. read files")
         print("2. write files")
         print("enter quit to stop the program")
-        option = int(input("Enter what number option you want to choose")) # I ran into a problem when writing to files and I can't quite work out where I am going wrong. 
+        option = int(input("Enter what number option you want to choose"))
 
 exit()

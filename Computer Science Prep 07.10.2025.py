@@ -21,6 +21,7 @@ rectangle_2 = Rectangle(5, 7)
 rectangle_3 = Rectangle(38, 96)
 rectangle_4 = Rectangle(556, 887)
 rectangle_5 = Rectangle(8496, 6295)
+rectanlges_area = [12, 35, 3648, ]
 
 rectangles = [rectangle_1, rectangle_2, rectangle_3, rectangle_4, rectangle_5]
 

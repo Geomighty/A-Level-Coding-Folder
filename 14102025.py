@@ -29,6 +29,8 @@ class Vector:
         self.x_y_value = f"(x, y): ({self.y_component}, {self.x_component})"
         self.mag_of_vect = f"The magnitude = {self.magnitude()}"
         return f"{self.x_value}\n{self.y_value}\n{self.x_y_value}\n{self.mag_of_vect}\n\n"
+
+
 def test_vector(vector, expected_magnitude, tolerance = 0.001):
     actual = vector.magnitude()
     if abs(actual-expected_magnitude) <= tolerance:

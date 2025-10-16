@@ -1,16 +1,4 @@
 import math
-'''class Thing:
-    def __init__(self):
-        self.x = 10
-    
-    def __str__(self):
-        return "A thing"
-    
-    def __repr__(self):
-        return "a thing in debug mode"
-
-thing = Thing()
-print(thing)'''
 
 class Vector:
     def __init__(self, x_component, y_component):
@@ -22,6 +10,10 @@ class Vector:
         self.square_y = self.y_component**2
         squareroot_sum = math.sqrt(self.square_x + self.square_y)
         return squareroot_sum
+    
+    def __add__(self):
+        added_vectors = self.x_component + self.y_component
+        return added_vectors
     
     def __str__(self):
         self.x_value = f"X value: {self.x_component}"
@@ -50,4 +42,4 @@ test_vector(vector_2, 8.60232526704)
 test_vector(vector_3, 93.40770846135)
 test_vector(vector_4, 79.61155694998)
 test_vector(vector_5, 549.29864372671)
-test_vector(vector_6, 686.13482640076) 
+test_vector(vector_6, 686.13482640076)

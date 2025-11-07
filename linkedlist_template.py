@@ -29,7 +29,7 @@ class LinkedList:
 
     def pop(self):
         if self._head_node is None:
-            raise IndexError("pop from empty stack")
+            raise IndexError("Popping from empty stack")
         node = self._head_node
         self._head_node = node.get_next()
         self._size -= 1

@@ -34,4 +34,13 @@ class Book(Item):
         self._ISBN = ISBN
     
     def SetAuthor(self, NewAuthor):
-        self.Author = NewAuthor
+        self._Author = NewAuthor
+    
+    def GetAuthor(self):
+        print(f'Author: {self._author}')
+    
+    def SetISBN(self, NewISBN):
+        self._ISBN = NewISBN
+    
+    def GetISBN(self):
+        print(f'ISBN: {self._ISBN}')

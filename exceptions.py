@@ -5,6 +5,8 @@ def login_unhandled(usernumber):
     print("\n -- The Basic Version --\n")
     number = int(usernumber)
     print("Welcome", usernames[number], "user number", number,".")
+    if number == 5:
+        raise Exception("ARGH Bad Guy Detected ")
     try: 
         division = 301 / number
         print(f"301 divided by {number} = {division}")

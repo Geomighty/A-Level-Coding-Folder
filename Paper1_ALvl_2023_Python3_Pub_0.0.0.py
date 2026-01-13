@@ -108,10 +108,16 @@ class Dastan:
         return SelectedSquare
 
     def __UseMoveOptionOffer(self):
-        ReplaceChoice = int(input("Choose the move option from your queue to replace (1 to 5): "))
-        self._CurrentPlayer.UpdateMoveOptionQueueWithOffer(ReplaceChoice - 1, self.__CreateMoveOption(self._MoveOptionOffer[self._MoveOptionOfferPosition], self._CurrentPlayer.GetDirection()))
-        self._CurrentPlayer.ChangeScore(-(10 - (ReplaceChoice * 2)))
-        self._MoveOptionOfferPosition = random.randint(0, 4)
+        valid = False
+        while valid == False:
+            ReplaceChoice = int(input("Choose the move option from your queue to replace (1 to 5): ")) 
+            if ReplaceChoice > 0 and ReplaceChoice < 6:
+                self._CurrentPlayer.UpdateMoveOptionQueueWithOffer(ReplaceChoice - 1, self.__CreateMoveOption(self._MoveOptionOffer[self._MoveOptionOfferPosition], self._CurrentPlayer.GetDirection()))
+                self._CurrentPlayer.ChangeScore(-(10 - (ReplaceChoice * 2)))
+                self._MoveOptionOfferPosition = random.randint(0, 4)
+                valid = True
+            else:
+                print("You have entered a number that is not between 1 and 5 both inclusive please try again")  
 
     def __GetPointsForOccupancyByPlayer(self, CurrentPlayer):
         ScoreAdjustment = 0
@@ -134,10 +140,12 @@ class Dastan:
             SquareIsValid = False
             Choice = 0
             while Choice < 1 or Choice > 3:
-                Choice = int(input("Choose move option to use from queue (1 to 3) or 9 to take the offer: "))
+                Choice = int(input("Choose move option to use from queue (1 to 3) or 9 to take the offer or 8 to cause an earthquake: "))
                 if Choice == 9:
                     self.__UseMoveOptionOffer()
                     self.__DisplayState()
+                elif Choice == 8:
+                    self.__ProcessBhukampa()
             while not SquareIsValid:
                 StartSquareReference = self.__GetSquareReference("containing the piece to move")
                 SquareIsValid = self.__CheckSquareIsValid(StartSquareReference, True)
@@ -295,6 +303,16 @@ class Dastan:
         self._Players[1].AddToMoveOptionQueue(self.__CreateMoveOption("jazair", -1))
         self._Players[1].AddToMoveOptionQueue(self.__CreateMoveOption("faujdar", -1))
         self._Players[1].AddToMoveOptionQueue(self.__CreateMoveOption("cuirassier", -1))
+
+    def __ProcessBhukampa(self):
+        for i in range(5):
+            rand1 = random.randint(0, ((self._NoOfRows * self._NoOfColumns) - 1))
+            rand2 = random.randint(0, ((self._NoOfRows * self._NoOfColumns) - 1))
+            rand1_temp = self._Board[rand1]
+            self._Board[rand1] = self._Board[rand2]
+            self._Board[rand2] = rand1_temp
+        self._CurrentPlayer.ChangeScore(-15)
+        self.__DisplayBoard()
 
 class Piece:
     def __init__(self, T, B, P, S):
